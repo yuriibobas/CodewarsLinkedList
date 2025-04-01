@@ -14,7 +14,7 @@ def linked_list_from_string(s):
     """ Function for parsing a linked list from a string """
     if s == 'None':
         return None
-    s = s.split(' -> ')
+    s = list(map(lambda x: int(x) if x != 'None' else x, s.split(' -> ')))
     head = Node(s[0])
     current = head
     for elem in s[1:]:
